@@ -1,5 +1,3 @@
-var note = require('../note-model.js');
-
 var assert = {
   isTrue: function(assertionToCheck) {
     if (!assertionToCheck) {

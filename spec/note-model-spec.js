@@ -1,5 +1,3 @@
-var note = require('../note-model.js')
-
 var assert = {
   isTrue: function(assertionToCheck) {
     if (!assertionToCheck) {
@@ -12,11 +10,6 @@ function noteCanBeInstansiated() {
   note = new Note();
 }
 
-function noteListAcceptsArray(text) {
-  note = new Note(text);
-  assert.isTrue(note.text !== undefined);
-}
-
 function noteReturnsStoredText(text){
   note = new Note(text);
   assert.isTrue(note.getText() === text);
@@ -25,5 +18,4 @@ function noteReturnsStoredText(text){
 
 
 noteCanBeInstansiated();
-noteAcceptsText("Hello");
 noteReturnsStoredText("Hello");
