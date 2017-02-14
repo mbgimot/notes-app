@@ -1,0 +1,24 @@
+{
+  "name": "note-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "note-list-model.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node_modules/http-server/bin/http-server .",
+      "test": "mocha test --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbgimot/notes-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbgimot/notes-app/issues"
+  },
+  "homepage": "https://github.com/mbgimot/notes-app#readme",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}
