@@ -12,18 +12,23 @@
   };
 
   NoteList.prototype.viewMessages = function () {
-    var messages = [];
-    for (var i=0; i< this.notes.length; i++) {
-      messages.push(this.notes[i].getText())
+    this.messages = [];
+    for (var i=0; i< this.numberOfNotes(); i++) {
+      this.messages.push(this.notes[i].getText())
     }
-    return messages
+    return this.messages;
   };
 
   NoteList.prototype.viewNoteModel = function () {
     return this.notes;
   };
 
+  NoteList.prototype.numberOfNotes = function () {
+    return this.notes.length;
+  };
+
   exports.NoteList = NoteList;
   exports.NoteList.createNote = NoteList.createNote;
   exports.NoteList.viewMessages = NoteList.viewMessages;
+  exports.NoteList.numberOfNotes = NoteList.numberOfNotes;
 })(this);
