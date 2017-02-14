@@ -5,15 +5,12 @@
     this.setText(text);
   }
 
-  var noteMessage;
-
   Note.prototype.getText = function () {
-    return noteMessage;
+    return this.noteMessage;
   };
 
   Note.prototype.setText = function (text) {
-    noteMessage = text;
-
+    this.noteMessage = text;
   };
 
   exports.Note = Note;
