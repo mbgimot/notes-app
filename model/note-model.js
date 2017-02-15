@@ -1,8 +1,10 @@
 "use strict";
 
 (function (exports) {
+  var uniqueID = 0;
   function Note (text) {
     this.setText(text);
+    this.id = ++uniqueID;
   }
 
   Note.prototype.getText = function () {
