@@ -28,7 +28,4 @@
   };
 
   exports.NoteList = NoteList;
-  exports.NoteList.createNote = NoteList.createNote;
-  exports.NoteList.viewMessages = NoteList.viewMessages;
-  exports.NoteList.numberOfNotes = NoteList.numberOfNotes;
 })(this);

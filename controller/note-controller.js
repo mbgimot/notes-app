@@ -1,22 +1,15 @@
 "use strict";
+
 (function(exports) {
-  function NoteController(){
-    var noteList = new NoteList();
-    noteList.createNote("Favourite drink: seltzer")
-    this.noteListView = new NoteListView(noteList)
+  function NoteController(list, element){
+    this.noteList = list;
+    this.noteListView = new NoteListView(this.noteList);
+    this.element = element;
   }
 
   NoteController.prototype.displayHTML = function () {
-    return this.noteListView.htmlWrapper();
+    this.element.innerHTML = this.noteListView.htmlWrapper();
   };
 
   exports.NoteController = NoteController;
-  exports.NoteController.displayHTML = NoteController.displayHTML;
 })(this);
-
-
-window.onload = (function(){
-  var noteController = new NoteController();
-  document.getElementById("app").innerHTML = noteController.displayHTML();
-
-});

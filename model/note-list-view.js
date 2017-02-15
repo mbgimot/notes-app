@@ -17,10 +17,4 @@
   };
 
   exports.NoteListView = NoteListView;
-  exports.NoteListView.htmlWrapper = NoteListView.htmlWrapper;
-
 })(this);
-
-var noteList = new NoteList()
-noteList.createNote("test");
-noteList.createNote("test1");

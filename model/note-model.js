@@ -14,6 +14,4 @@
   };
 
   exports.Note = Note;
-  exports.getText = Note.getText;
-
 })(this);
