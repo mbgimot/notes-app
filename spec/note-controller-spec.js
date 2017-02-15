@@ -11,7 +11,7 @@ function ShowsNotesOnAPage (){
   noteList.createNote("Favourite drink: coffee");
   var noteController = new NoteController(noteList, elementDouble);
   noteController.displayHTML();
-  assert.isTrue(elementDouble.innerHTML === '<ul><li><div>Favourite drink: coffee</div></li></ul>');
+  assert.isTrue(elementDouble.innerHTML === '<ul><li><div>Favourite drink: cof</div></li></ul>');
 }
 
 ShowsNotesOnAPage();

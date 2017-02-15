@@ -12,5 +12,12 @@ function htmlWrapperNone() {
   assert.isTrue(noteListView.htmlWrapper() === undefined);
 }
 
+function limiter(){
+  var noteList = new NoteList();
+  noteList.createNote("This string should be limited somewhere somehow in someway");
+  var noteListView = new NoteListView(noteList);
+  assert.isTrue(noteListView.htmlWrapper() === "<ul><li><div>This string should b</li></div></ul>")
+}
 htmlWrapperMany();
 htmlWrapperNone();
+limiter();
