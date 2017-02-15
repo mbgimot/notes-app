@@ -4,11 +4,9 @@ function NoteControllerInstansiated (){
   assert.isTrue(noteController instanceof NoteController);
 }
 
-NoteControllerInstansiated();
 
 function ShowsNotesOnAPage (){
   var elementDouble = document.createElement('div');
-  elementDouble.setAttribute('id', 'test')
   var noteList = new NoteList();
   noteList.createNote("Favourite drink: coffee");
   var noteController = new NoteController(noteList, elementDouble);
@@ -17,3 +15,4 @@ function ShowsNotesOnAPage (){
 }
 
 ShowsNotesOnAPage();
+NoteControllerInstansiated();
