@@ -7,4 +7,6 @@
     this.noteController = new NoteController(noteList);
     this.noteController.displayHTML(link);
     this.noteController.makeURLChangeShowNote();
+    var text = document.getElementById('text');
+    this.noteController.submitListener(text, link);
 })();

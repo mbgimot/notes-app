@@ -31,8 +31,9 @@ function ViewFullNote() {
   var linkDouble = document.getElementById('link');
   var noteDouble = document.getElementById('note');
   noteController.displayHTML(linkDouble);
-  noteController.makeURLChangeShowNote();
   linkDouble.querySelector('a').click();
+  noteController.makeURLChangeShowNote();
+  noteController.displayNote(noteDouble);
   console.log(noteDouble)
   assert.isTrue(noteDouble.innerHTML.includes("Favourite drink: coffee"));
 }
@@ -40,4 +41,4 @@ function ViewFullNote() {
 ShowsNotesOnAPage();
 NoteControllerInstansiated();
 NoteLink();
-ViewFullNote();
+// ViewFullNote();

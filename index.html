@@ -11,6 +11,11 @@
 
   </head>
   <body>
+    <form action='#notes/new' method='POST' id='text'>
+      New Note<br>
+      <textarea name="message" form="text" rows="5" cols="25">Enter note here...</textarea><br>
+      <input type='submit' value='Add'>
+    </form>
     <div id="link"></div>
     <div id="note"></div>
     <script src="../controller/note-controller.js"></script>
