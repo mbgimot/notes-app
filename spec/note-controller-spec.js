@@ -23,19 +23,20 @@ function NoteLink () {
   var linkDouble = document.getElementById('link')
   noteController.displayNotes(linkDouble);
   linkDouble.querySelector('a').click();
-  assert.isTrue(window.location.hash === "#notes/13");
+  assert.isTrue(window.location.hash === "#notes/12");
 }
 
 function ViewFullNote() {
   var noteList = new NoteList();
   noteList.createNote("Favourite drink: coffee");
   var noteController = new NoteController(noteList);
-  var linkDouble = document.getElementById('link');
-  var noteDouble = document.getElementById('note');
+  var linkDouble = document.createElement('link');
+  var noteDouble = document.createElement('note');
   noteController.displayNotes(linkDouble);
   linkDouble.querySelector('a').click();
   noteController.makeURLChangeShowNote();
-  noteController.displayNote(noteDouble);
+  noteController.showNote(13)
+  console.log(noteDouble.innerHTML)
   assert.isTrue(noteDouble.innerHTML.includes("Favourite drink: coffee"));
 }
 
@@ -65,16 +66,23 @@ function CanAddNotes(){
   formDouble.appendChild(submitDouble);
   document.body.appendChild(formDouble);
   document.body.appendChild(linkDouble);
-  var text = document.getElementById('text');
-  noteController.submitListener(text, linkDouble)
-  // formDouble.submit();
-
+  var linkDouble = document.getElementById('link');
+  function submitListener (text, link) {
+    text.addEventListener("click", function(clickEvent){
+      clickEvent.preventDefault();
+      noteController.addNote(clickEvent,linkDouble);
+    }.bind(this), false);
+  }
+  // created new submitListener funciton as calling .submit() instead of .click() doesn't fire an event handler
+  submitListener(formDouble, linkDouble);
+  text.click();
+  assert.isTrue(linkDouble.innerHTML.includes("test"))
 }
 
 AppLoads();
 ShowsNotesOnAPage();
 NoteControllerInstansiated();
 NoteLink();
-// CanAddNotes();
+CanAddNotes();
 
 // ViewFullNote();
